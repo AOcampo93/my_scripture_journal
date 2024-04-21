@@ -1,0 +1,57 @@
+﻿@page
+@model MyScriptureJournal.Pages.Scriptures.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="flex-center">
+    <div id="box">
+        <div class="img-card">
+            <img src="../images/machine.png" alt="Edit">
+        </div>
+        <div class="cont-form">
+            <div class="title-center">
+                <h1>Details</h1>
+                <p class="no-margin"><a asp-page="./Index">Back to List</a></p>
+                <p class="no-margin"><a asp-page="./Edit" asp-route-id="@Model.Scripture?.Id">Edit</a></p>
+            </div>
+            <div class="row row-space">
+                <div class="col">
+                    <dl class="row form-styles">
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.Book)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.Book)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.Chapter)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.Chapter)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.Verse)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.Verse)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.Note)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.Note)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.ReleaseDate)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.ReleaseDate)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

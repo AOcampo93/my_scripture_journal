@@ -1,0 +1,61 @@
+﻿@page
+@model MyScriptureJournal.Pages.Scriptures.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="flex-center">
+    <div id="box">
+        <div class="img-card">
+            <img src="../images/trash.png" alt="Delete">
+        </div>
+        <div class="cont-form">
+            <div class="title-center">
+                <h1>Delete</h1>
+                <h3 class="delete-text">Are you sure you want to delete this?</h3>
+                <p class="no-margin"><a asp-page="./Index">Back to List</a></p>
+            </div>
+            <div class="row row-space">
+                <div class="col">
+                    <dl class="row form-styles">
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.Book)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.Book)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.Chapter)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.Chapter)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.Verse)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.Verse)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.Note)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.Note)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.Scripture.ReleaseDate)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Scripture.ReleaseDate)
+                        </dd>
+                    </dl>
+                    <form method="post">
+                        <input type="hidden" asp-for="Scripture.Id" />
+                        <input type="submit" value="Delete" class="btn-cta btn-margin" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div id="Heading1">
+    <div>
+        <h1>My Scripture<br />Journal</h1>
+        <p>By Arturo Ocampo</p>
+    </div>
+</div>
+<div id="cont-carousel">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <div class="book-carousel">
+          <img src="./images/bookOfMormon.png" alt="Book Of Mormon">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <div class="book-carousel">
+          <img src="./images/Bible.png" alt="Bible">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="book-carousel">
+          <img src="./images/DoctrineAndCovenants.png" alt="Doctrine And Covenants">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="book-carousel">
+          <img src="./images/PearlOfGreatPrice.png" alt="Pearl Of Great Price">
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+<!--Resources Section-->
+<div id="resources">
+    <div>
+        <h2>LDS Resources</h2>
+    </div>
+    <div id="cont-flow">
+
+        <!--Box resource-->
+        <div class="small-box">
+            <div class="img-book">
+                <img src="./images/Bible.png" alt="The Bible">
+            </div>
+            <div class="text-resource">
+                <div>
+                    <h3>Holy Bible</h3>
+                    <p>Old and New Testaments</p>
+                </div>
+                <button type="button" onclick="location.href='https://www.churchofjesuschrist.org/study/scriptures/nt?lang=eng'">Read book</button>
+            </div>
+        </div>
+
+        <!--Box resource-->
+        <div class="small-box">
+            <div class="img-book">
+                <img src="./images/BookOfMormon.png" alt="Book Of Mormon">
+            </div>
+            <div class="text-resource">
+                <div>
+                    <h3>Book of<br />Mormon</h3>
+                    <p>Another testament of Jesus Christ</p>
+                </div>
+                <button type="button" onclick="location.href='https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng'">Read book</button>
+            </div>
+        </div>
+
+        <!--Box resource-->
+        <div class="small-box">
+            <div class="img-book">
+                <img src="./images/DoctrineAndCovenants.png" alt="Doctrine And Covenants">
+            </div>
+            <div class="text-resource">
+                <div>
+                    <h3>Doctrine & Covenants</h3>
+                    <p>Published in 1835</p>
+                </div>
+                <button type="button" onclick="location.href='https://www.churchofjesuschrist.org/study/scriptures/dc-testament?lang=eng'">Read book</button>
+            </div>
+        </div>
+
+        <!--Box resource-->
+        <div class="small-box">
+            <div class="img-book">
+                <img src="./images/PearlOfGreatPrice.png" alt="Pearl Of Great Price">
+            </div>
+            <div class="text-resource">
+                <div>
+                    <h3>Pearl Of Great Price</h3>
+                    <p>Published in 1842</p>
+                </div>
+                <button type="button" onclick="location.href='https://www.churchofjesuschrist.org/study/scriptures/pgp?lang=eng'">Read book</button>
+            </div>
+        </div>
+    </div>
+</div>

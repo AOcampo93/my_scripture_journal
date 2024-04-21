@@ -1,0 +1,62 @@
+﻿@page
+@model MyScriptureJournal.Pages.Scriptures.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<div class="flex-center">
+    <div id="box">
+        <div class="img-card">
+            <img src="../images/form-img.png" alt="Create">
+        </div>
+        <div class="cont-form">
+            <div class="title-center">
+                <h1>Create</h1>
+                <p><a asp-page="Index">Back to List</a></p>
+            </div>
+            <div class="row row-space">
+                <div class="col">
+                    <form method="post" class="form-styles">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Scripture.Book" class="control-label"></label>
+                            <input asp-for="Scripture.Book" class="form-control" />
+                            <span asp-validation-for="Scripture.Book" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Scripture.Chapter" class="control-label"></label>
+                            <input asp-for="Scripture.Chapter" class="form-control" />
+                            <span asp-validation-for="Scripture.Chapter" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Scripture.Verse" class="control-label"></label>
+                            <input asp-for="Scripture.Verse" class="form-control" />
+                            <span asp-validation-for="Scripture.Verse" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Scripture.Note" class="control-label"></label>
+                            <input asp-for="Scripture.Note" class="form-control" />
+                            <span asp-validation-for="Scripture.Note" class="text-danger"></span>
+                        </div>
+                        <div class="form-group hidden">
+                            <label asp-for="Scripture.ReleaseDate" class="control-label"></label>
+                            <input asp-for="Scripture.ReleaseDate" class="form-control" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                            <span asp-validation-for="Scripture.ReleaseDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn-cta" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

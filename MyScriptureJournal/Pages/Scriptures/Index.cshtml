@@ -1,0 +1,87 @@
+﻿@page
+@model MyScriptureJournal.Pages.Scriptures.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="flex-center">
+    <div id="box-table">
+        <div class="title-center">
+            <h1>My Scriptures</h1>
+            <p><a asp-page="Create">Create New</a></p>
+        </div>
+        <div class="flex-center">
+            <div class="form-box">
+                <p>Search in my scriptures</p>
+                <form>
+                    <p>
+                        <input class="btn-filter" placeholder="Scripture:" type="text" asp-for="SearchString" />
+                        <input class="btn-filter-2" type="submit" value="Filter" />
+                    </p>
+                </form>
+                <form>
+                    <p>
+                        <input class="btn-filter" type="text" placeholder="Notes:" asp-for="SearchStringNotes" />
+                        <input class="btn-filter-2" type="submit" value="Filter" />
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-responsive-md">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <!--I commented the name of the table and re write the name-->
+                            <!--@Html.DisplayNameFor(model => model.Scripture[0].Book)-->
+                            Scripture
+                        </th>
+                        <!--<th>
+                        @Html.DisplayNameFor(model => model.Scripture[0].Chapter)
+                        </th>
+                        <th>
+                        @Html.DisplayNameFor(model => model.Scripture[0].Verse)
+                        </th>-->
+                        <th>
+                            @Html.DisplayNameFor(model => model.Scripture[0].Note)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Scripture[0].ReleaseDate)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Scripture)
+                    {
+                        <tr>
+                            <!--I commented the Chapter and Verse Column, and I put together in the same column called Scriptures-->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Book) @Html.DisplayFor(modelItem => item.Chapter) : @Html.DisplayFor(modelItem => item.Verse)
+                            </td>
+                            <!--<td>
+                            @Html.DisplayFor(modelItem => item.Chapter)
+                            </td>
+                            <td>
+                            @Html.DisplayFor(modelItem => item.Verse)
+                            </td>-->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Note)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReleaseDate)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
